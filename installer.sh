@@ -103,6 +103,9 @@ rm phantomjs-2.1.1-linux-x86_64.tar.bz2
 #install webscreenshot
 pip install webscreenshot
 
+#install subzy
+go get -u -v github.com/lukasikic/subzy
+
 #install naabu
 GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu
 echo "done"
