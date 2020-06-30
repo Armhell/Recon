@@ -117,4 +117,5 @@ echo "done"
 #Finalize
 source ~/.bashrc
 mkdir ~/projects
+mv ~/Recon/recon.sh /usr/local/bin/recon
 echo "Required tools have been added in ~/pentest!"
