@@ -103,9 +103,6 @@ rm phantomjs-2.1.1-linux-x86_64.tar.bz2
 #install webscreenshot
 pip install webscreenshot
 
-#install subzy
-go get -u -v github.com/lukasikic/subzy
-
 #install asnip
 go get -v github.com/harleo/asnip
 echo "done"
