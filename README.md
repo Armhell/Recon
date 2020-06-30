@@ -16,5 +16,5 @@ Just run the tool and fetch yourself a coffee :)
 2. Run installer.sh
 
 # Usage
-1. ./recon.sh
-2. Enter the name of your target
+1. Just type in recon
+2. Enter the site name.
