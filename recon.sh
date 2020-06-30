@@ -51,7 +51,7 @@ shuffledns -d $hax -list sub.txt -massdns ~/pentest/massdns/bin/massdns -r ~/pen
 rm sub.txt
 
 #Run chaos-client
-chaos -d $hax -o resolved.txt -silent
+#chaos -d $hax -o resolved.txt -silent
 
 #Sort IPs
 echo "Sorting out IPs for you:"
@@ -64,20 +64,11 @@ sort -u 1.txt >> IPs.txt
 rm ips.txt && rm cidrs.txt && rm 1.txt
 
 #Run HTTPX
-cat resolved.txt | httpx -o httpx.txt -silent
+cat resolved.txt | httpx -o subdomains.txt -silent
+rm resolved.txt
 
 #Run Webscreenshot
 webscreenshot -i httpx.txt -o screenshots
-
-#Run Subzy
-echo "Checking for subdomain-takeover vulnerability"
-mkdir ~/projects/$hax/takeover
-cd takeover/
-subzy -targets ~/projects/$hax/resolved.txt >> 1.txt
-subzy -targets ~/projects/$hax/httprobe/httpx.txt >> 2.txt
-cat 1.txt >> takeover.txt && rm 1.txt
-cat 2.txt >> takeover.txt && rm 2.txt
-grep "VULNERABLE" takeover.txt >> possible_takeover.txt
 
 #Run Portscan
 echo "Running Portscan :)"
