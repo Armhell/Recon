@@ -106,6 +106,10 @@ pip install webscreenshot
 #install subzy
 go get -u -v github.com/lukasikic/subzy
 
+#install asnip
+go get -v github.com/harleo/asnip
+echo "done"
+
 #install naabu
 GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu
 echo "done"
