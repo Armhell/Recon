@@ -54,10 +54,11 @@ mkdir ~/pentest
 
 #install assetfinder
 echo "Installing assetfinder"
-go get github.com/tomnomnom/assetfinder
+go get -u github.com/tomnomnom/assetfinder
 echo "done"
 
 #install findomain
+
 wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
 chmod +x findomain-linux
 mv findomain-linux /usr/local/bin/findomain-linux
@@ -74,8 +75,7 @@ echo "done"
 
 #install shuffledns
 cd ~/
-GO111MODULE=on
-go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns
+GO111MODULE=on go get -u -v github.com/projectdiscovery/shuffledns/cmd/shuffledns
 
 #install chaos-clinet
 GO111MODULE=on go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
