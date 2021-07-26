@@ -9,11 +9,11 @@ cd ~/projects/$hax
 #Run dns.bufferover & tls.bufferover
 echo "Scanning sub-domains for $hax"
 curl -s https://dns.bufferover.run/dns?q=$hax | cut -f 2 -d "," | cut -d \" -f 1 | cut -d \} -f 1 | cut -d \] -f 1 | cut -d \{ -f 1 | awk NF >> 1.txt
-curl -s https://tls.bufferover.run/dns?q=$hax | cut -f 2 -d "," | cut -d \" -f 1 | cut -d \} -f 1 | cut -d \] -f 1 | cut -d \{ -f 1 | awk NF >> 1.txt
+#curl -s https://tls.bufferover.run/dns?q=$hax | cut -f 2 -d "," | cut -d \" -f 1 | cut -d \} -f 1 | cut -d \] -f 1 | cut -d \{ -f 1 | awk NF >> 1.txt
 
 #Run certspotter & crtsh
 echo "Running certspotter"
-curl -s https://certspotter.com/api/v0/certs\?domain\=$hax | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $hax >> 1.txt
+#curl -s https://certspotter.com/api/v0/certs\?domain\=$hax | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $hax >> 1.txt
 echo "Running crtsh"
 curl -s https://crt.sh/?q=%25.$hax | grep "$hax" | grep "<TD>" | cut -d">" -f2 | cut -d"<" -f1 | sort -u | sed s/*.//g >> 1.txt
 
@@ -23,7 +23,7 @@ assetfinder --subs-only $hax >> 1.txt
 
 #Run Findomain
 echo "Running Findomain"
-findomain -t $hax -u 1.txt -q
+findomain-linux -t $hax -u 1.txt -q
 
 echo "Initializing Deep DNS Scans!"
 
