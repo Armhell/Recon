@@ -95,10 +95,7 @@ go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 echo "done"
 
 #install phantomjs
-wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
-tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C /usr/local/share/
-ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64.tar.bz2/bin/phantomjs /usr/local/bin/
-rm phantomjs-2.1.1-linux-x86_64.tar.bz2
+apt install phantomjs
 
 #install webscreenshot
 pip install webscreenshot
