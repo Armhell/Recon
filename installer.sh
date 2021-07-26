@@ -30,8 +30,8 @@ select choice in "${choices[@]}"; do
         case $choice in
                 yes)
 					echo "Installing Golang"
-					wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
-					tar -C /usr/local -xzf go1.14.2.linux-amd64.tar.gz
+					wget https://golang.org/dl/go1.16.6.linux-amd64.tar.gz
+					tar -C /usr/local -xzf go1.16.6.linux-amd64.tar.gz
 					echo "export GOROOT=/usr/local/go" >> ~/.bashrc
 					echo "export GOPATH=$HOME/go"	>> ~/.bashrc			
 					echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH" >> ~/.bashrc	
